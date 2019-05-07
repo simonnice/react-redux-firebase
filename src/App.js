@@ -5,6 +5,10 @@ import store from './store'
 import './App.css';
 import AppNavbar from './components/layout/AppNavbar'
 import Dashboard from './components/layout/Dashboard'
+import AddClient from './components/clients/AddClient'
+import ClientDetails from './components/clients/ClientDetails'
+import EditClient from './components/clients/EditClient'
+import Login from './components/auth/Login'
 
 function App() {
   return (
@@ -15,6 +19,11 @@ function App() {
           <div className="container">
             <Switch>
               <Route exact path="/" component={Dashboard} />
+              <Route path="/client/add" component={AddClient}></Route>
+              <Route path="/login" component={Login}></Route>
+              <Route path="/client/edit/:id" component={EditClient}></Route>
+              <Route path="/client/:id" component={ClientDetails}>
+              </Route>
             </Switch>
           </div>
         </div>
